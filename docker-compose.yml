@@ -1,0 +1,9 @@
+
+version: '3.6'
+
+services:
+  gochan:
+    image: gochan:latest
+    container_name: gochan
+    ports:
+      - 4433:4433

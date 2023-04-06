@@ -1,0 +1,52 @@
+{{$boardLetter := .BoardLetter}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>4chan Board /{{.BoardLetter}}/ - Page {{.Page}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="showboard.css">
+    <link rel="manifest" href="gochan.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <h1>4chan - /{{.BoardLetter}}/</h1>
+    </header>
+    <main>
+      <h2>Page: {{.Page}}</h2>
+      {{range .Threads}}
+        <a href="/get_thread?thread={{.No}}&board={{$boardLetter}}">
+          <section>
+            <h4>{{.No}}</h4>
+            <h4>{{.Name}}</h4>
+            <p class="sub">{{.Sub}}</p>
+            {{ if (gt .Tim 0) }}
+              {{ if eq .Ext ".webm" }}
+              <video controls loop src="images/{{.Tim}}{{.Ext}}" alt="Thread {{.No}} thumbnail">
+              </video>
+              {{ else }}
+                <img src=images/{{.Tim}}{{.Ext}} id="{{.Tim}}"  alt="Thread {{.No}} thumbnail"/>
+              {{ end }}
+            {{ end }}
+            <p>{{.Com}}</p>
+            <p class="thread-info">Replies: {{.Replies}} / Images: {{.Images}}</p>
+            <p class="thread-time">Time: {{.Time}}</p>
+            {{if eq .Closed 1}}
+              <span class="closed">(Closed)</span>
+            {{else}}
+              <span class="open">(Open)</span>
+            {{end}}
+          </section>
+        </a>
+      {{end}}
+    </main>
+    <footer>
+      {{ if gt .PreviousPage 0 }}
+        <p class="page-nav"><a href="/get_boards?board={{.BoardLetter}}&page={{.PreviousPage}}"><- Previous Page</a></p>
+      {{ end }}
+      {{ if gt .NextPage 0 }}
+        <p class="page-nav"><a href="/get_boards?board={{.BoardLetter}}&page={{.NextPage}}">Next Page -></a></p>
+      {{ end }}
+    </footer>
+  </body>
+</html>

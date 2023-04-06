@@ -1,0 +1,71 @@
+/* Set the font family and size for the whole page */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* Add some padding to the header and main section */
+header, main {
+  padding: 20px;
+}
+
+main h2 {
+  color: #f5f5f5;
+  font-size: 2rem;
+}
+
+/* Style the header elements */
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+header h3 {
+  margin: 10px 0 0;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+/* Style the board selection section */
+section {
+  margin: 20px 0;
+}
+
+section h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #BB86FC;
+}
+
+ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+li {
+  padding: 2px 0;
+}
+
+li a {
+  display: block;
+  padding: 15px 0;
+  margin: 5px 0;
+  background-color: #242424;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: background-color 1s ease-in-out;
+}
+
+li a:hover {
+  background-color: rgba(187, 134, 252, 0.5);
+}

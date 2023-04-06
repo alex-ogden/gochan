@@ -1,0 +1,24 @@
+{
+	"name": "GoChan 4Chan reader",
+	"short_name": "GoChan",
+	"description": "A light-weight reader for 4Chan",
+	"icons": [{
+		"src": "icons/applogo-256.png",
+		"sizes": "256x256",
+		"type": "image/png"
+	}],
+	"start_url": "/index.html",
+	"display": "fullscreen",
+	"theme_color": "#DFDFDF",
+	"scope": "/",
+	"shortcuts": [{
+		"name": "GoChan 4Chan reader",
+		"short_name": "GoChan",
+		"description": "A light-weight reader for 4Chan",
+		"url": "/index.html",
+		"icons": [{
+			"src": "/icons/applogo-256.png",
+			"sizes": "256x256"
+		}]
+	}]
+}
