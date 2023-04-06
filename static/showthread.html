@@ -35,49 +35,6 @@
       </section>
       {{end}}
     </main>
-    <script>
-      function showQuotedPost() {
-        quote = this;
-        /* 
-          Get the ID of the paragraph surrounding the quote (containing the post)
-          Then get the ID of the paragraph that shares the same ID, but has -quotepreview
-          This get's us our hidden quote box's ID
-        */
-        parentParagraphId = quote.parentNode.id;
-        quotePreviewId = parentParagraphId.replace("-text", "-quotepreview");
-
-        /*
-          If our quote preview is already expanded, we just need to hide it when
-          the user clicks on the quote link again.
-          If not, we get the innerHTML of the quoted post and set
-          our hidden quote preview's innerHTML to be the same, then
-          we apply some styling and display it as an inline-block
-        */
-        if (quote.className.includes("expanded")) {
-          document.getElementById(quotePreviewId).style.display = "none";
-          quote.classList.remove("expanded");
-        } else {
-          quotedPostNum = quote.innerHTML.replace("&gt;&gt;", "");
-          quotedText = document.getElementById(quotedPostNum+"-text").innerHTML;
-
-          document.getElementById(quotePreviewId).innerHTML = quotedText;
-          document.getElementById(quotePreviewId).style.display = "inline-block";
-          document.getElementById(quotePreviewId).style.border = "1px solid black";
-          document.getElementById(quotePreviewId).style.backgroundColor = "#363636"
-          document.getElementById(quotePreviewId).style.boxShadow = "2px 2px 4px rgba(0, 0, 0, 0.5)";
-          document.getElementById(quotePreviewId).style.padding = "30px";
-
-          // Add expanded class
-          quote.classList.add("expanded");
-        }
-      }
-
-      var quotes = document.getElementsByClassName("quotelink");
-      for (var i = 0; i < quotes.length; i++) {
-				// Remove href
-				quotes[i].removeAttribute("href");
-        quotes[i].addEventListener("click", showQuotedPost);
-      }
-    </script>
+    <script src="thread.js"></script>
   </body>
 </html>
