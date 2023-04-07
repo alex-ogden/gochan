@@ -7,3 +7,8 @@ services:
     container_name: gochan
     ports:
       - 4433:4433
+    volumes:
+      - imagedir:/usr/src/app/static/images
+
+volumes:
+  imagedir:
