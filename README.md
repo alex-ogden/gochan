@@ -15,10 +15,16 @@ GoChan addresses these issues by building in a mobile-first manner:
 ### Interface
 Here are some screenshots of the user interface:
 
+The homescreen:
 ![HomeScreen](docs/screenshots/homescreen.jpeg "Homescreen")
+The board view (this is /g/, for example):
 ![BoardView](docs/screenshots/board-view.jpeg "Board")
+A view of a thread, you can see the number of replies and images, when the thread was made, the name and number of the thread etc...
 ![BoardView2](docs/screenshots/board-view2.jpeg "Board")
+A view from within a thread, clicking a post quote (e.g `>>92834724`) gives a preview of the post (including text and images) that the user was replying to.
 ![ThreadView](docs/screenshots/thread-view.jpeg "Thread")
+
+The interface is functional and doesn't look too bad for now. It will be improved in the future. I wanted to ensure it wasn't too bloated or ultra-modern as that wouldn't fit with the general 4Chan look.
 
 ### Installation and Configuration
 Installation is purposefully very easy. We'll start with building and running the Go binary. To do this, ensure you have Go installed and setup on your system and do the following:
