@@ -11,6 +11,15 @@ GoChan addresses these issues by building in a mobile-first manner:
 * Ability to add GoChan to your homescreen with PWA capabilities built-in, this means that it acts just like a regular app would once opened from the homescreen (no browser interface, just the app) - to do this see the following (wordy) guide:
 
 [How to add a website to home screen on iOS and Android](https://techwiser.com/how-to-add-a-website-to-home-screen-on-ios-and-android/)
+
+### Interface
+Here are some screenshots of the user interface:
+
+![HomeScreen](docs/screenshots/homescreen.jpeg "Homescreen")
+![BoardView](docs/screenshots/board-view.jpeg "Board")
+![BoardView2](docs/screenshots/board-view2.jpeg "Board")
+![ThreadView](docs/screenshots/thread-view.jpeg "Thread")
+
 ### Installation and Configuration
 Installation is purposefully very easy. We'll start with building and running the Go binary. To do this, ensure you have Go installed and setup on your system and do the following:
 
@@ -59,3 +68,5 @@ Everything should work correctly, however if something does go wrong, see the lo
 
 ##### Thread/Board Images:
 Due to limitations of the 4Chan read-only API, it's not possible to reference images via URL (using `i.4cdn.org`) - this is a CORS issue. If you want to try using a CORS proxy feel free however I've not had much luck so far. Due to this, GoChan needs to pre-download the images to the filesystem before loading a thread/board. This can cause slowdowns on slow connections or in threads with many high-res images however the download process is handled via goroutines so it's about as fast as it can be. It will clear all downloaded images before loading a new thread or board so you shouldn't have a problem with disk usage.
+
+#### Please don't laugh at my tests. I'm not a QA and I don't know what I'm doing :|
