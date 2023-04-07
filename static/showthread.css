@@ -4,18 +4,17 @@ body {
     background-color: #121212;
     color: #f5f5f5;
   }
-  
+
   /* Add some padding to the header and main section */
   header, main {
     padding: 5px;
     padding-top: 30px;
   }
-  
+
   img {
     display: inline;
     max-width: 50%;
     height: auto;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
   }
 
   video {
@@ -31,7 +30,7 @@ body {
     font-weight: bold;
     color: #f5f5f5;
   }
-  
+
   h2 {
     margin: 0;
     font-size: 1.5rem;
@@ -39,7 +38,7 @@ body {
     color: #BB86FC;
     margin-bottom: 20px;
   }
-  
+
   section {
     background-color: #242424;
     padding: 10px;
@@ -51,26 +50,26 @@ body {
   section h4 {
     font-size: 1.5rem;
   }
-  
+
   a {
     color: #f5f5f5;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
     font-weight: bold;
   }
-  
+
   a:hover {
-    color: rgba(187, 134, 252);
+    color: #bb86fc;
   }
-  
+
   .thread-info, .thread-time {
     font-size: 14px;
     color: #f5f5f5;
     margin-top: 5px;
   }
-  
+
   .sub {
-    color:rgba(187, 134, 252)
+    color: #bb86fc
   }
 
   @media only screen and (max-width: 768px) {
@@ -88,4 +87,3 @@ body {
       font-size: 12px;
     }
   }
-  

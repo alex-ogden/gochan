@@ -2,29 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>4chan /{{.BoardLetter}}/ - {{.ThreadNo}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="showthread.css">
-    <link rel="manifest" href="gochan.webmanifest" />
+    <link rel="manifest" href="manifest.json" />
+    <!-- iOS support -->
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#BB86FC" />
+    <meta name="theme-color" content="#BB86FC" />
+    <title>4chan /{{.BoardLetter}}/ - {{.ThreadNo}}</title>
   </head>
   <body>
+    <main>
     <header>
       <h1>4Chan - /{{ .BoardLetter }}/ - {{ .ThreadNo }}</h1>
     </header>
-    <main>
       {{range .Posts}}
       <section>
         <h4>{{.No}}</h4>
         <p class="sub">{{.Sub}}</p>
         {{ if (gt .Tim 0) }}
           {{ if eq .Ext ".webm" }}
-            <video controls loop src="images/{{.Tim}}{{.Ext}}" alt="Thread {{.No}} thumbnail">
+            <video controls loop src="images/{{.Tim}}{{.Ext}}" id="{{.No}}" alt="Thread {{.No}} thumbnail">
             </video>
           {{ else }}
-            <img src=images/{{.Tim}}{{.Ext}} id="{{.Tim}}"  alt="Thread {{.No}} thumbnail"/>
+            <img src=images/{{.Tim}}{{.Ext}} id="{{.No}}" alt="Thread {{.No}} thumbnail"/>
           {{ end }}
         {{ end }}
-        <p id="{{.No}}-quotepreview" style="display: none;"></p>
+        <div class="previewspan" id="{{.No}}-post-preview" style="display: none;">
+          <img id="{{.No}}-quoteimage" class="noshadowimg" src="//:0" />
+          <br />
+          <p id="{{.No}}-quotepreview" style="display: none;"></p>
+        </div>
         <p id="{{.No}}-text">{{.Com}}</p>
         {{ if gt .Images 0 }}
           <p class="thread-info">Replies: {{.Replies}} / Images: {{.Images}}</p>

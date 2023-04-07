@@ -1,24 +1,32 @@
 {
 	"name": "GoChan 4Chan reader",
 	"short_name": "GoChan",
-	"description": "A light-weight reader for 4Chan",
-	"icons": [{
-		"src": "icons/applogo-256.png",
-		"sizes": "256x256",
-		"type": "image/png"
-	}],
 	"start_url": "/index.html",
-	"display": "fullscreen",
-	"theme_color": "#DFDFDF",
-	"scope": "/",
-	"shortcuts": [{
-		"name": "GoChan 4Chan reader",
-		"short_name": "GoChan",
-		"description": "A light-weight reader for 4Chan",
-		"url": "/index.html",
-		"icons": [{
-			"src": "/icons/applogo-256.png",
-			"sizes": "256x256"
-		}]
-	}]
+	"display": "standalone",
+	"background-color": "#121212",
+	"theme_color": "#BB86FC",
+	"orientation": "portrait-primary",
+	"description": "A light-weight reader for 4Chan",
+	"icons": [
+	  {
+		"src": "icons/applogo-256.png",
+	    "type": "image/png",
+		"sizes": "256x256"
+	  },
+	  {
+		"src": "icons/applogo-192.png",
+	    "type": "image/png",
+		"sizes": "192x192"
+	  },
+	  {
+		"src": "icons/applogo-128.png",
+	    "type": "image/png",
+		"sizes": "128x128"
+	  },
+	  {
+		"src": "icons/applogo-96.png",
+	    "type": "image/png",
+		"sizes": "96x96"
+	  }
+	]
 }
