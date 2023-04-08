@@ -9,6 +9,11 @@ services:
       - 4433:4433
     volumes:
       - imagedir:/usr/src/app/static/images
+    restart_policy:
+      condition: any
+      delay: 2s
+      max_attempts: 5
+      window: 10s
 
 volumes:
   imagedir:

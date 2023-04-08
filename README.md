@@ -29,6 +29,8 @@ The interface is functional and doesn't look too bad for now. It will be improve
 ### Installation and Configuration
 Installation is purposefully very easy. We'll start with building and running the Go binary. To do this, ensure you have Go installed and setup on your system and do the following:
 
+NOTE: The default port used by GoChan is 4433, this can be changed by adding a $PORT environment variable prior to running. You may have to ammend the Dockerfile and Compose file to achieve this if you're using Docker to run it.
+
 Clone the repo and enter the gochan directory within the repo:
 ```bash
 git clone https://github.com/alex-ogden/gochan.git
@@ -66,6 +68,12 @@ docker compose up -d
 ```
 
 Docker Compose will automatically create a volume and mount it to the container to hold the images downloaded by GoChan (see known issues below)
+
+You should now be able to access GoChan at:
+```
+http://localhost:4433
+```
+Ammend the address and port to suit your setup and when connecting from another device.
 
 ### Troubleshooting
 Everything should work correctly, however if something does go wrong, see the logs raised by the service using either `docker logs ${CONTAINER_NAME}` or by running the executable and ensuring logs are fed to stdout/stderr or to a file.
