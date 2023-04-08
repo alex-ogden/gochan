@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"os"
-	"sync"
 )
 
 type CatalogResponse struct {
