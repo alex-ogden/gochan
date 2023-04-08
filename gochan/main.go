@@ -45,16 +45,6 @@ type ThreadResponse struct {
 	}
 }
 
-// Summon type for downloading images in parallel
-type Summon struct {
-	concurrency int
-	uri         string
-	chunks      map[int][]byte
-	err         error
-	opath       string
-	*sync.Mutex
-}
-
 const STATIC_DIR string = "../static"
 const IMAGES_DIR string = STATIC_DIR + "/images"
 const API_URL = "https://a.4cdn.org"
