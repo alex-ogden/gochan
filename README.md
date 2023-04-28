@@ -1,14 +1,14 @@
 # gochan
-A self-hosted 4Chan frontend server that makes browsing 4Chan on mobile devices far easier! This is by no means a finished product. It still has many features planned and lots of new stuff on the way. It works for now (and doesn't look that bad, so far).
+A self-hosted 4Chan frontend server that makes browsing 4Chan on mobile devices far easier! It still has many features planned and lots of new stuff on the way.
 
 ### Why?
 GoChan was made to address a few issues I have as a 4Chan user:
 * 4Chan doesn't have an app for iOS and any app developed for iOS is taken down after a certain time once Apple catches on. Yes, I am aware of Sigma, it's a great app but it's not 4Chan-focused - I also hate the Reddit-style approach to thread-layout.
-* If used through a mobile web-browser, 4Chan looks, frankly, awful. It's a site built with Desktop use in mind. There have been some improvements recently but I still find it cumbersome to use on mobile.
+* If used through a mobile web-browser, 4Chan looks pretty bad. It's a site built with Desktop use in mind. There have been some improvements recently but I still find it cumbersome to use on mobile.
 
 GoChan addresses these issues by building in a mobile-first manner:
-* A great (if I say so myself) user interface, buttons and text which is big enough for mobile and a decent colour scheme (dark/light mode switcher is planned, currently it's just dark).
-* Ability to add GoChan to your homescreen with PWA capabilities built-in, this means that it acts just like a regular app would once opened from the homescreen (no browser interface, just the app) - to do this see the following (wordy) guide:
+* A nice user interface, buttons and text which is big enough for mobile and a decent colour scheme (dark/light mode switcher is planned, currently it's just dark).
+* Ability to add GoChan to your homescreen with PWA capabilities built-in, this means that it acts just like a regular app would once opened from the homescreen (no browser interface, just the app). To do this see the following (wordy) guide:
 
 [How to add a website to home screen on iOS and Android](https://techwiser.com/how-to-add-a-website-to-home-screen-on-ios-and-android/)
 
@@ -82,5 +82,3 @@ Everything should work correctly, however if something does go wrong, see the lo
 
 ##### Thread/Board Images:
 Due to limitations of the 4Chan read-only API, it's not possible to reference images via URL (using `i.4cdn.org`) - this is a CORS issue. If you want to try using a CORS proxy feel free however I've not had much luck so far. Due to this, GoChan needs to pre-download the images to the filesystem before loading a thread/board. This can cause slowdowns on slow connections or in threads with many high-res images however the download process is handled via goroutines so it's about as fast as it can be. It will clear all downloaded images before loading a new thread or board so you shouldn't have a problem with disk usage.
-
-#### Please don't laugh at my tests. I'm not a QA and I don't know what I'm doing :|
