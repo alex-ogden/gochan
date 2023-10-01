@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -86,6 +87,7 @@ func getBoards(w http.ResponseWriter, r *http.Request) {
 
 	// Send request
 	log.Print("Retrieving data from endpoint: ", catalogAPIEndpoint)
+	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	resp, err := http.Get(catalogAPIEndpoint)
 	if err != nil {
 		log.Fatalf("Error getting board /%s/ catalog: %s", requiredBoard, err)
